@@ -41,9 +41,9 @@ print ("Frequencies:", freq_list)
 print ("Signal dBm:", sign_list)
 
 for i in range(len(freq_list)):
-    t = arange(freq_list[i]-0.011, freq_list[i]+0.011, 0.001)
-    s = -100000*(t-(freq_list[i]-0.011))*(t-(freq_list[i]+0.011)) + sign_list[i] -12
-    plot(t, s)
+    freq_x = arange(freq_list[i]-0.011, freq_list[i]+0.011, 0.001)
+    power_y = -100000*(freq_x-(freq_list[i]-0.011))*(freq_x-(freq_list[i]+0.011)) + sign_list[i] -12
+    plot(freq_x, power_y)
 
 xlabel('GHz')
 ylabel('dBm')
